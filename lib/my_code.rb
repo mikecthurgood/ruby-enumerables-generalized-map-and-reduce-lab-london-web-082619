@@ -10,16 +10,16 @@ end
 
 def reduce(array, starting_value = nil)
 	if starting_value
-	  reduced = starting_value
+	  new = starting_value
 	  i = 0
 	else
-	  reduced = array[0]
+	  new = array[0]
 	  i = 1
 	end
 	
 	while i < array.length
-	  reduced = yield(reduced, array[i])
+	  new = yield(new, array[i])
 	  i += 1
 	end
-	return reduced
+	return new
 end
